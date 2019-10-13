@@ -1,0 +1,101 @@
+body{
+    background-color: slategray;
+}
+
+i.icon{
+    font-size: 2em;
+}
+
+table{
+    padding-top: 20px;
+    padding-left: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.huge.header{
+    padding-top: 50px;
+    text-align: center;
+    font-weight: 600;
+}
+
+a{
+    color: white;
+}
+.desc{
+    text-align: center;
+}
+
+.header.jobNumber{
+    color: teal;
+}
+
+.cards{
+    padding: 50px;
+}
+
+.new.container{
+    margin-top: 75px;
+    border: 8px solid teal;
+}
+
+.trademark{
+    text-align: center;
+    color: rgb(241, 247, 247);
+}
+
+.centered{
+    align-items: baseline;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.issue{
+    color: red;
+}
+
+.grid.container{
+    padding-left: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-right: 100px;
+}
+
+.material{
+    text-align: center;
+}
+
+th{
+    font-size: 16px;
+}
+
+form.register {
+    padding-top: 25px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+h1.register{
+    padding-top: 100px;
+    text-align: center;
+}
+
+.button.signup {
+    margin-left: 20px;
+    align-self: center;
+}
+
+.teal{
+    color: teal;
+}
+
+.comment{
+    color: aqua;
+}
+
+.center {
+    text-align: center;
+}

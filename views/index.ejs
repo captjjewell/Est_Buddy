@@ -1,0 +1,37 @@
+<% include ./partials/header %>
+    <p></p>
+    <p></p>
+
+    <div class="ui huge centered inverted header">Current Jobs</div>
+    
+    <table class="ui inverted teal table">
+        <thead>
+            <tr>
+                <th><strong>Job Number</strong></th>
+                <th><strong>Date Created</strong></th>
+                <th><strong>Unit #</strong></th>
+                <th><strong>Lot #</strong></th>
+                <th><strong>Series</strong></th>
+                <th><strong>Model</strong></th>
+                <th><strong>Red File</strong></th>
+                <th><strong>Issue</strong></th>
+                <th><strong>Description</strong></th>
+            </tr>
+        </thead>
+            <tbody>
+                <% ests.forEach(function(est){ %>
+                    <tr>
+                        <td><a href="/est/<%=est._id%>"><strong><%=est.jobNumber%></strong></a></td>
+                        <td><%=est.created.toDateString()%></td>
+                        <td><%=est.unit%></td>
+                        <td><%=est.lot%></td>
+                        <td><%=est.series%></td>
+                        <td><%=est.model%></td>
+                        <td><%=est.redFile%></td>
+                        <td><%=est.issue%></td>
+                        <td><%=est.description.substring(0, 30)%></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+    </table>
+<% include ./partials/footer %>

@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Est Buddy</title>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+        
+        
+    <body>
+        <div class="ui teal inverted menu">
+            <div class="header item"><i class="code icon"></i></div>
+            <a href="/" class="item">Home</a>
+            <a href="/est/new" class="item"><i class="plus icon"></i>New Entry</a>
+            <div class="right menu">
+                <% if(!currentUser){ %>
+                    <a href="/login" class="item">Login</a>
+                    <a href="/register" class="item"><i class="thumbs up icon"></i>Sign Up</a>
+                <% }else{ %>
+                    <a href="#" class="item"><strong><%= currentUser.username %></strong></a>
+                    <a href="/logout" class="item">Logout</a>
+                <% } %>
+            </div>
+        </div>
+        
+         
+        

@@ -1,0 +1,69 @@
+<% include ./partials/header %>
+<div class="ui main text new container segment">
+    <div class="ui huge header jobNumber"><i class="plus icon"></i>New Entry</div>
+    <form class="ui form" action="/est" method="POST">
+        <div class="ui top attached">
+            <table class="ui definition table">
+            <h4 class="ui horizontal teal divider header">Builder Info</h4>
+                <tbody>
+                    <tr>
+                        <td class="two column"><label>First Name</label></td>
+                        <td><input type="text" name="firstName" required placeholder="John" autofocus></td>
+                        <td><strong>Last Name</strong></td>
+                        <td><input type="text" name="lastName" required placeholder="Doe"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="ui definition table">
+                <h4 class="ui horizontal teal divider header">House Info</h4>
+                <tbody>
+                    <tr>
+                        <td class="two wide column"><label>Unit</label></td>
+                        <td><input type="text" name="unit" required placeholder="Unit"></td>
+                        <td><strong>Lot</strong></td>
+                        <td><input type="text" name="lot" required placeholder="Lot"></td>
+                    </tr>
+                    <tr>
+                        <td><Strong>Series</Strong></td>
+                        <td><input type="text" name="series" placeholder="Series"></td>
+                        <td><strong>Model</strong></td>
+                        <td><input type="text" name="model" placeholder="Model"></td>
+                    </tr>
+                    <tr>
+                        <td><Strong>House #</Strong></td>
+                        <td><input type="text" name="houseNumber" placeholder="1234"></td>
+                        <td><strong>Street</strong></td>
+                        <td><input type="text" name="street" placeholder="Street Name"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="ui definition table">
+                <h4 class="ui horizontal teal divider header">Job Info</h4>
+                <tbody>
+                    <tr>
+                        <td class="two wide column"><label>Red File</label></td>
+                        <td><input type="text" name="redFile" placeholder="Yes/No"></td>
+                        <td><strong>Issue</strong></td>
+                        <td><input type="text" name="issue" placeholder="Yes/No"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>PO $</strong></td>
+                        <td><input type="text" name="poTotal" placeholder="$"></td>
+                        <td><strong>Margin</strong></td>
+                        <td><input type="text" name="margin" placeholder="%"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="ui horizontal teal divider header">Description</h4>
+            <div class="fields">
+                <textarea class="field" rows="4" name="description"></textarea>
+            </div>
+        </div>
+        <div class="center">
+            <input class="ui green basic button" type="submit" value="Create">
+            <a href="#" class="ui yellow basic button">Clear</a>
+            <a href="/" class="ui orange basic button">Abort</a>
+        </div>
+    </form>
+</div>
+<% include ./partials/footer %>

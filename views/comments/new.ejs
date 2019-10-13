@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+<div class="ui main new text container segment">
+    <h1 class="ui huge header jobNumber"><strong><%= est.jobNumber %></strong></h1>
+    <form class="register" action="/est/<%= est._id %>/comments" method="POST">
+        <div class="ui form">
+            <div class="field">
+                <h3 class="jobNumber teal">New Comment</h3>
+                <textarea name="comment[text]" placeholder="Comment Here" autofocus></textarea>
+            </div>
+            <div class="field teal">Author: <%= currentUser.username %></div>
+            <div class="fields">
+                <div class="field">
+                        <button class="ui teal button signup">Submit</button>
+                    </div>
+                    <div class="field">
+                        <button class="ui yellow button signup">Clear</button>
+                    </div>
+                    <div class="field">
+                        <a href="/est/<%= est._id %>" class="ui red button signup">Cancel</a>
+                </div>
+            </div>
+          </div>
+    </form>
+</div>
+
+<% include ../partials/footer %>

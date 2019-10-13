@@ -1,0 +1,31 @@
+<% include partials/header %>
+<div class="ui main new text container segment">
+    <div class="ui huge header jobNumber"><strong>Login</strong></div>
+    <form class="register" action="/login" method="POST">
+        <div class="ui form">
+            <div class="fields">
+                <div class="field">
+                    <label>Username</label>
+                    <input type="text" name="username" placeholder="Username" autofocus>
+                </div>
+                <div class="field">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="Password">
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field">
+                    <button class="ui teal button signup">Login</button>
+                </div>
+                <div class="field">
+                    <button class="ui yellow button signup">Clear</button>
+                </div>
+                <div class="field">
+                    <a href="/" class="ui red button signup">Cancel</a>
+                </div>
+              </div>
+          </div>
+    </form>
+</div>
+
+<% include partials/footer %>
