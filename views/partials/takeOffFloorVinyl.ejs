@@ -1,0 +1,41 @@
+<p>
+    <h2 class="ui horizontal purple header centered" onclick="floorVinylTakeOff()">Vinyl Areas</h2>
+</p>
+<% est.takeOffFloorVinyl.forEach(function(takeOffFloorVinyl){ %>
+<div class="fields">
+    <div class="field">
+        <p>
+            <h3 class="ui horizontal purple divider header"><%= takeOffFloorVinyl.location %></h3>
+        </p>
+        <p>
+            <strong>Style/Color - </strong><%= takeOffFloorVinyl.material.style %> - <%= takeOffFloorVinyl.material.color %>
+        </p>
+        <p>
+            <strong>Pattern Repeat - </strong> <%= takeOffFloorVinyl.material.patternRepeat %>
+        </p>
+        <p>
+            <strong>Pattern Matches - </strong> <%= takeOffFloorVinyl.material.patternMatches %>
+        </p>
+        <p>
+            <strong>Size - </strong> <%= takeOffFloorVinyl.material.width %> x <%= takeOffFloorVinyl.material.length %>
+        </p>
+        <p>
+            <strong>Net SY - </strong> <%= takeOffFloorVinyl.estimate.net %>
+        </p>
+        <p>
+            <strong>Gross SY - </strong> <%= takeOffFloorVinyl.estimate.gross %>
+        </p>
+        <p>
+            <strong>Waste Factor - </strong> <%= takeOffFloorVinyl.estimate.waste %>
+        </p>
+        <p>
+            <strong>Installer Notes:</strong>
+        </p>
+        <%= takeOffFloorVinyl.installerNotes %>
+        <div class="centered">
+            <a class="ui yellow button">Edit</a>
+            <a class="ui red button">Delete</a>
+        </div>
+    </div>   
+</div>
+<% }) %>

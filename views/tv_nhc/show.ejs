@@ -1,0 +1,209 @@
+<% include ../partials/header %>
+<div class="ui main text new container segment">
+    <div class="ui huge header jobNumber"><strong><%=est.jobNumber%></strong></div>
+    <div class="ui top attached">
+        <table class="ui definition table">
+            <h4 class="ui horizontal teal header centered">
+                <%= est.firstName + " " +  est.lastName + " - " + est.houseNumber + " " + est.street%>
+            </h4>
+            <h4 class="ui horizontal teal divider header">House Info</h4>
+            <tbody>
+                <tr>
+                    <td class="four wide column">Unit</td>
+                    <td><%= est.unit %></td>
+                    <td><strong>Lot</strong></td>
+                    <td><%= est.lot %></td>
+                </tr>
+                <tr>
+                    <td><strong>Series</strong></td>
+                    <td><%= est.series %></td>
+                    <td><strong>Model</strong></td>
+                    <td><%= est.model %></td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="ui definition table">
+            <h4 class="ui horizontal teal divider header">Job Info</h4>
+            <tbody>
+                <tr>
+                    <td class="four wide column"><label>Red File</label></td>
+                    <td><%= est.redFile %></td>
+                    <td><strong>Issue</strong></td>
+                    <td><%= est.issue %></td>
+                </tr>
+                <% if(currentUser && currentUser.username === "Jason") { %>
+                <tr>
+                    <td><strong>PO Total</strong></td>
+                    <td><%= "$ " + est.poTotal %></td>
+                    <td><strong>Margin</strong></td>
+                    <td><%= est.margin + " %" %></td>
+                </tr>
+                <% } %>
+                
+            </tbody>
+        </table>
+        <h4 class="ui horizontal teal divider header">Descripton</h4>
+        <p class="desc"><%=est.description%></p>
+        <div class="centered">
+            <a class="ui green button" href="/tv_nhc">TV NHC</a>
+            <a class="ui green button" href="/tv_nhc/<%=est._id%>/edit">Edit</a>
+            <form id="delete" action="/tv_nhc/<%= est._id %>?_method=DELETE" method="POST">
+                <button class="ui red button">Delete</button>
+            </form>
+        </div>
+        <div class="centered">
+            <a class="ui green button " href="/tv_nhc/<%= est._id %>/takeOff">Take Off</a>
+            <a class="ui green button" href="/tv_nhc/<%= est._id %>/comments/new">Comment</a>
+            <a class="ui red button " href="/tv_nhc/<%= est._id %>/issue">Issue</a>
+        </div>
+    </div>
+    <p class="centered teal">Created By: <%= est.author.username %></p>
+    <p class="centered teal"><%= est.created.toDateString() %></p>
+</div>
+<div class="ui main text new container segment">
+    <div class="ui large centered header jobNumber"><strong>Take Off's</strong></div>
+    <h3 class="ui horizontal teal centered header">Flooring</h4>
+    <h3 class="ui horizontal yellow divider header">Carpet Roll</h4>
+    <div class="centered">
+        <% est.takeOffFloorCarpet.forEach(function(takeOffFloorCarpet){ %>
+            <a class="ui yellow button" onclick="floorCarpetTakeOff()"><%= takeOffFloorCarpet.location %></a>
+        <% }) %>
+    </div>
+    <h3 class="ui horizontal green divider header">Floor Tile</h4>
+    <div class="centered">
+        <% est.takeOffFloorTile.forEach(function(takeOffFloorTile){ %>
+            <a class="ui green button" onclick="floorTileTakeOff()"><%= takeOffFloorTile.location %></a>
+        <% }) %>
+    </div>
+    <h3 class="ui horizontal purple divider header">Vinyl Roll</h4>
+    <div class="centered">
+        <% est.takeOffFloorVinyl.forEach(function(takeOffFloorVinyl){ %>
+            <a class="ui purple button" onclick="floorVinylTakeOff()"><%= takeOffFloorVinyl.location %></a>
+        <% }) %>
+    </div>
+    <h3 class="ui horizontal brown divider header">LVP</h4>
+    <div class="centered">
+        <% est.takeOffFloorLVP.forEach(function(takeOffFloorLVP){ %>
+            <a class="ui brown button" onclick="floorLVPTakeOff()"><%= takeOffFloorLVP.location %></a>
+        <% }) %>
+    </div>
+    <h3 class="ui horizontal orange divider header">Other Flooring</h4>
+    <div class="centered">
+        <a class="ui orange button">Other</a>
+    </div>
+        
+    <h4 class="ui horizontal blue divider header">Shower - Tub Hop</h4>
+    <div class="centered">
+        <a class="ui blue button">Shower(s)</a>
+        <a class="ui blue button">Tub Hop(s)</a>
+    </div>
+    <h4 class="ui horizontal pink divider header">Backsplash - Glass Block - Other Wall Tile </h4>
+    <div class="centered">
+        <a class="ui inverted pink button">Backsplash</a>
+        <a class="ui inverted pink button">Int Block</a>
+        <a class="ui inverted pink button">Ext Block</a>
+        <a class="ui inverted pink button">Other</a>
+    </div>
+</div>
+<div class="ui main new text container carpet segment" id="takeOffFloorCarpet" style="display:none">
+    <% include ../partials/takeOffFloorCarpet %>   
+</div>
+<div class="ui main new text container tile segment" id="takeOffFloorTile" style="display:none">
+    <% include ../partials/takeOffFloorTile %>
+</div>  
+<div class="ui main new text container vinyl segment" id="takeOffFloorVinyl" style="display:none">
+    <% include ../partials/takeOffFloorVinyl %> 
+</div>
+<div class="ui main new text container lvp segment" id="takeOffFloorLVP" style="display:none">
+    <% include ../partials/takeOffFloorLVP %>
+</div>
+<div class="ui main new text container segment">
+        <div class="ui large centered header jobNumber"><strong>Issues/Comments</strong></div>
+    <h4 class="ui horizontal red divider header">Issues</h4>
+    <div class="center">
+        <a class="ui red button" onclick="issues()">Issues</a>
+    </div>
+    <h4 class="ui horizontal blue divider header">Comments</h4>
+    <div class="center">
+        <a class="ui blue button" onclick="comments()">Comments</a>
+    </div>
+</div>
+<div class="ui main new text container segment" id="issues" style="display:none">
+    <% include ../partials/issues %>
+</div>
+<div class="ui main new text container segment" id="comments" style="display:none">
+    <% include ../partials/comments %>
+</div>
+  
+<script>
+    var takeOffFloorCarpet = document.getElementById("takeOffFloorCarpet");
+    var takeOffFloorTile = document.getElementById("takeOffFloorTile");
+    var takeOffFloorVinyl = document.getElementById("takeOffFloorVinyl");
+    var takeOffFloorLVP = document.getElementById("takeOffFloorLVP");
+
+    function floorCarpetTakeOff() {
+        if(takeOffFloorCarpet.style.display === "none") {
+            takeOffFloorCarpet.style.display = "block";
+            takeOffFloorTile.style.display = "none";
+            takeOffFloorVinyl.style.display = "none";
+            takeOffFloorLVP.style.display = "none";
+            issues.style.display = "none";
+            comments.style.display = "none";
+        }else{
+            takeOffFloorCarpet.style.display = "none";
+        }  
+    }
+    function floorTileTakeOff() {
+        if(takeOffFloorTile.style.display === "none") {
+            takeOffFloorTile.style.display = "block";
+            takeOffFloorCarpet.style.display = "none";
+            takeOffFloorVinyl.style.display = "none";
+            takeOffFloorLVP.style.display = "none";
+            issues.style.display = "none";
+            comments.style.display = "none";
+        }else{
+            takeOffFloorTile.style.display = "none";
+        }
+    }
+    function floorVinylTakeOff() {
+        if(takeOffFloorVinyl.style.display === "none") {
+            takeOffFloorVinyl.style.display = "block";
+            takeOffFloorCarpet.style.display = "none";
+            takeOffFloorTile.style.display = "none";
+            takeOffFloorLVP.style.display = "none";
+            issues.style.display = "none";
+            comments.style.display = "none";
+        }else{
+            takeOffFloorVinyl.style.display = "none";
+        }
+    }
+    function floorLVPTakeOff() {
+        if(takeOffFloorLVP.style.display === "none") {
+            takeOffFloorLVP.style.display = "block";
+            takeOffFloorCarpet.style.display = "none";
+            takeOffFloorVinyl.style.display = "none";
+            takeOffFloorTile.style.display = "none";
+            issues.style.display = "none";
+            comments.style.display = "none";
+        }else{
+            takeOffFloorLVP.style.display = "none";
+        }
+    }
+    function issues() {
+        var issues = document.getElementById("issues");
+        if(issues.style.display === "none") {
+            issues.style.display = "block";
+        }else{
+            issues.style.display = "none";
+        }
+    }
+    function comments() {
+        var comments = document.getElementById("comments");
+        if(comments.style.display === "none") {
+            comments.style.display = "block";
+        }else{
+            comments.style.display = "none";
+        }
+    }
+</script>
+<% include ../partials/footer %>

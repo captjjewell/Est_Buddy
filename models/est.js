@@ -29,10 +29,28 @@ const estSchema = new mongoose.Schema({
             ref: "Comment"
         }
     ],
-    takeOff: [
+    takeOffFloorCarpet: [
         {
             type: mongoose.Schema.Types.ObjectId,
-            ref: "TakeOff"
+            ref: "TakeOffFloorCarpet"
+        }
+    ],
+    takeOffFloorTile: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "TakeOffFloorTile"
+        }
+    ],
+    takeOffFloorVinyl: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "TakeOffFloorVinyl"
+        }
+    ],
+    takeOffFloorLVP: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "TakeOffFloorLVP"
         }
     ]
 });

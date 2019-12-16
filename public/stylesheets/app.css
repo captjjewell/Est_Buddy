@@ -35,8 +35,28 @@ a{
 }
 
 .new.container{
-    margin-top: 75px;
+    margin-top: 50px;
     border: 8px solid teal;
+}
+
+.new.container.carpet{
+    margin-top: 50px;
+    border: 8px solid yellow;
+}
+
+.new.container.tile{
+    margin-top: 50px;
+    border: 8px solid green;
+}
+
+.new.container.vinyl{
+    margin-top: 50px;
+    border: 8px solid purple;
+}
+
+.new.container.lvp{
+    margin-top: 50px;
+    border: 8px solid brown;
 }
 
 .trademark{

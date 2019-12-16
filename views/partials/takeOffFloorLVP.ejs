@@ -1,0 +1,41 @@
+<p>
+    <h2 class="ui horizontal brown header centered" onclick="floorLVPTakeOff()">LVP Areas</h2>
+</p>
+<% est.takeOffFloorLVP.forEach(function(takeOffFloorLVP){ %>
+<div class="fields">
+    <div class="field">
+        <p>
+            <h3 class="ui horizontal brown divider header"><%= takeOffFloorLVP.location %></h3>
+        </p>
+        <p>
+            <strong>Style/Color - </strong><%= takeOffFloorLVP.material.style %> - <%= takeOffFloorLVP.material.color %>
+        </p>
+        <p>
+            <strong>Size - </strong> <%= takeOffFloorLVP.material.width %> x <%= takeOffFloorLVP.material.length %>
+        </p>
+        <p>
+            <strong>Direction - </strong> <%= takeOffFloorLVP.material.direction %>
+        </p>
+        <p>
+            <strong>Pattern - </strong> <%= takeOffFloorLVP.material.pattern %>
+        </p>
+        <p>
+            <strong>Net SF - </strong> <%= takeOffFloorLVP.estimate.net %>
+        </p>
+        <p>
+            <strong>Gross SF - </strong> <%= takeOffFloorLVP.estimate.gross %>
+        </p>
+        <p>
+            <strong>Waste Factor - </strong> <%= takeOffFloorLVP.estimate.waste %>
+        </p>
+        <p>
+            <strong>Installer Notes:</strong>
+        </p>
+        <%= takeOffFloorLVP.installerNotes %>
+        <div class="centered">
+            <a class="ui yellow button">Edit</a>
+            <a class="ui red button">Delete</a>
+        </div>
+    </div>   
+</div>
+<% }) %>

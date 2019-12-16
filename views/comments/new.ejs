@@ -1,7 +1,7 @@
 <% include ../partials/header %>
 <div class="ui main new text container segment">
     <h1 class="ui huge header jobNumber"><strong><%= est.jobNumber %></strong></h1>
-    <form class="register" action="/est/<%= est._id %>/comments" method="POST">
+    <form class="register" action="/tv_nhc/<%= est._id %>/comments" method="POST">
         <div class="ui form">
             <div class="field">
                 <h3 class="jobNumber teal">New Comment</h3>
@@ -16,7 +16,7 @@
                         <button class="ui yellow button signup">Clear</button>
                     </div>
                     <div class="field">
-                        <a href="/est/<%= est._id %>" class="ui red button signup">Cancel</a>
+                        <a href="/tv_nhc/<%= est._id %>" class="ui red button signup">Cancel</a>
                 </div>
             </div>
           </div>

@@ -1,0 +1,63 @@
+<% include ../partials/header %>
+<div class="ui main text new container segment">
+        <div class="ui huge header jobNumber">Take Off - <%= est.jobNumber %> </div>
+        <form class="ui form" action="/tv_nhc/<%= est._id %>/takeOff-floor-lvp" method="POST">
+            <div class="ui top attached">
+                <table class="ui definition table">
+                <h4 class="ui horizontal teal divider header">LVP Flooring Take Off</h4>
+                    <tbody>
+                        <tr>
+                            <td class="two column"><label>Room(s)</label></td>
+                            <td><input type="text" name="location" required placeholder="Room Name" autofocus></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Style</strong></td>
+                            <td><input type="text" name="material[style]" required placeholder="Style"></td>
+                            <td><strong>Color</strong></td>
+                            <td><input type="text" name="material[color]" required placeholder="Color"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Width</strong></td>
+                            <td><input type="text" name="material[width]" required placeholder="Width"></td>
+                            <td><strong>Length</strong></td>
+                            <td><input type="text" name="material[length]" required placeholder="Length"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Direction</strong></td>
+                            <td>
+                                <select name="material[direction]">
+                                    <option selected="true" disabled>-- Select One --</option>
+                                    <option value="Front to Back">Front to Back</option>
+                                    <option value="Side to Side">Side to Side</option>
+                                </select>
+                            </td>
+                            <td><strong>Pattern</strong></td>
+                            <td><input type="text" name="material[pattern]" required placeholder="Pattern"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Net SF</strong></td>
+                            <td><input type="text" name="estimate[net]" required placeholder="Net SY"></td>
+                            <td><strong>Gross SF</strong></td>
+                            <td><input type="text" name="estimate[gross]" required placeholder="Gross SY"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Waste</strong></td>
+                            <td><input type="text" name="estimate[waste]" required placeholder="Waste"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 class="ui horizontal teal divider header">Installer Notes</h4>
+                <div class="fields">
+                    <textarea class="field" rows="4" name="installerNotes"></textarea>
+                </div>
+            </div>
+            <div class="center">
+                <a href="/tv_nhc/<%=est._id%>/takeOff-floor" class="ui green basic button">Back</a>
+                <input class="ui green basic button" type="submit" value="Add">
+                <a href="#" class="ui yellow basic button">Clear</a>
+                <a href="/tv_nhc/<%=est._id%>" class="ui blue basic button">Done</a>
+            </div>
+        </form>
+    </div>
+
+<% include ../partials/footer %>

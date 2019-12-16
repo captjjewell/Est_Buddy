@@ -1,8 +1,10 @@
-<% include ./partials/header %>
+<% include ../partials/header %>
     <p></p>
     <p></p>
 
-    <div class="ui huge centered inverted header">Current Jobs</div>
+    <div class="ui huge centered inverted header">The Villages NHC</div>
+
+    <% include ../partials/basicsort %>
     
     <table class="ui inverted teal table">
         <thead>
@@ -21,7 +23,7 @@
             <tbody>
                 <% ests.forEach(function(est){ %>
                     <tr>
-                        <td><a href="/est/<%=est._id%>"><strong><%=est.jobNumber%></strong></a></td>
+                        <td><a href="/tv_nhc/<%=est._id%>"><strong><%=est.jobNumber%></strong></a></td>
                         <td><%=est.created.toDateString()%></td>
                         <td><%=est.unit%></td>
                         <td><%=est.lot%></td>
@@ -34,4 +36,4 @@
                 <% }) %>
             </tbody>
     </table>
-<% include ./partials/footer %>
+<% include ../partials/footer %>

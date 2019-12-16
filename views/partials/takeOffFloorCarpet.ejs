@@ -1,0 +1,41 @@
+<p>
+    <h2 class="ui horizontal yellow header centered" onclick="floorCarpetTakeOff()">Carpet Areas</h2>
+</p>
+<% est.takeOffFloorCarpet.forEach(function(takeOffFloorCarpet){ %>
+<div class="fields">
+    <div class="field">
+        <p>
+            <h3 class="ui horizontal yellow divider header"><%= takeOffFloorCarpet.location %></h3>
+        </p>
+        <p>
+            <strong>Style/Color - </strong><%= takeOffFloorCarpet.material.style %> - <%= takeOffFloorCarpet.material.color %>
+        </p>
+        <p>
+            <strong>Size - </strong> <%= takeOffFloorCarpet.material.width %> x <%= takeOffFloorCarpet.material.length %>
+        </p>
+        <p>
+            <strong>Net SY - </strong> <%= takeOffFloorCarpet.estimate.net %>
+        </p>
+        <p>
+            <strong>Gross SY - </strong> <%= takeOffFloorCarpet.estimate.gross %>
+        </p>
+        <p>
+            <strong>Pad Style - </strong> <%= takeOffFloorCarpet.material.padStyle %>
+        </p>
+        <p>
+            <strong>Pad SY - </strong> <%= takeOffFloorCarpet.material.padSY %>
+        </p>
+        <p>
+            <strong>Waste Factor - </strong> <%= takeOffFloorCarpet.estimate.waste %>
+        </p>
+        <p>
+            <strong>Installer Notes:</strong>
+        </p>
+        <%= takeOffFloorCarpet.installerNotes %>
+        <div class="centered">
+            <a class="ui yellow button">Edit</a>
+            <a class="ui red button">Delete</a>
+        </div>
+    </div>   
+</div>
+<% }) %>

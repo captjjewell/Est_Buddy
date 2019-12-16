@@ -1,0 +1,18 @@
+<% include ../partials/header %>
+<div class="ui main text new container segment">
+    <div class="ui huge header jobNumber">Take Off - <%= est.jobNumber %> </div>
+        <div class="ui top attached">
+            <table class="ui definition table">
+            <h4 class="ui horizontal teal divider header">Select Material</h4>
+            <div class="center">
+                <a href="/tv_nhc/<%= est._id %>/takeOff-floor-tile" class="ui green basic button">Tile</a>
+                <a href="/tv_nhc/<%= est._id %>/takeOff-floor-carpet" class="ui yellow basic button">Carpet</a>
+                <a href="/tv_nhc/<%= est._id %>/takeOff-floor-vinyl" class="ui purple basic button">Vinyl</a>
+                <a href="/tv_nhc/<%= est._id %>/takeOff-floor-lvp" class="ui orange basic button">LVP</a>
+                <a href="/tv_nhc/<%= est._id %>/takeOff-floor-other" class="ui blue basic button">Other</a>
+            </div>
+            </table>
+        </div>
+      
+</div>
+<% include ../partials/footer %>

@@ -15,13 +15,13 @@ router.get("/new", middleware.isLoggedIn, function(req, res){
     })
 });
 
-// CREATE COMMENT ROUTE sf
+// CREATE COMMENT ROUTE
 router.post("/", middleware.isLoggedIn, function(req, res){
     // LOOKUP ENTRY BY ID
     Est.findById(req.params.id, function(err, est){
         if(err){
             conosle.log(err);
-            res.redirect("/est");
+            res.redirect("/tv_nhc");
         }else{
             Comment.create(req.body.comment, function(err, comment){
                 if(err){
@@ -29,6 +29,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
                     console.log(err);
                 }else{
                     // ADD USERNAME AND ID TO COMMENT
+                    //console.log(req.body.comment);
                     comment.author.id = req.user._id;
                     comment.author.username = req.user.username;
                     // SAVE COMMENT
@@ -37,7 +38,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
                     est.save();
                     console.log(comment);
                     req.flash("success", "Successfully added comment");
-                    res.redirect("/est/" + est._id);
+                    res.redirect("/tv_nhc/" + est._id);
                 }
             });
         }

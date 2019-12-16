@@ -1,0 +1,44 @@
+<p>
+    <h2 class="ui horizontal green header centered" onclick="floorTileTakeOff()">Tile Areas</h2>
+</p>
+<% est.takeOffFloorTile.forEach(function(takeOffFloorTile){ %>
+<div class="fields">
+    <div class="field">
+        <p>
+            <h3 class="ui horizontal green divider header"><%= takeOffFloorTile.location %></h3>
+        </p>
+        <p>
+            <strong>Style/Color - </strong><%= takeOffFloorTile.material.style %> - <%= takeOffFloorTile.material.color %>
+        </p>
+        <p>
+            <strong>Size - </strong> <%= takeOffFloorTile.material.width %> x <%= takeOffFloorTile.material.length %>
+        </p>
+        <p>
+            <strong>Direction/Pattern - </strong> <%= takeOffFloorTile.material.direction %> / <%= takeOffFloorTile.material.pattern %>
+        </p>
+        <p>
+            <strong>Grout - </strong> <%= takeOffFloorTile.material.groutStyle %> - <%= takeOffFloorTile.material.groutColor %>
+        </p>
+        <p>
+            <strong>Net SF - </strong> <%= takeOffFloorTile.estimate.net %>
+        </p>
+        <p>
+            <strong>Gross SF - </strong> <%= takeOffFloorTile.estimate.gross %>
+        </p>
+        <p>
+            <strong>Tile Count - </strong> <%= takeOffFloorTile.estimate.tileCount %>
+        </p>
+        <p>
+            <strong>Waste Factor - </strong> <%= takeOffFloorTile.estimate.waste %>
+        </p>
+        <p>
+            <strong>Installer Notes:</strong>
+        </p>
+        <%= takeOffFloorTile.installerNotes %>
+        <div class="centered">
+            <a class="ui yellow button">Edit</a>
+            <a class="ui red button">Delete</a>
+        </div>
+    </div>   
+</div>
+<% }) %>
